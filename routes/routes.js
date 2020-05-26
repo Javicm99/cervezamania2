@@ -7,6 +7,8 @@ import Solicitud from "../src/components/Solicitud.vue";
 import NavBar from "../src/components/NavBar.vue";
 import TodasCervezas from "../src/components/TodasCervezas.vue";
 import Vuecard from "../src/components/Vuecard.vue";
+import Cervezas from "../src/components/Cervezas.vue";
+
 
 
 
@@ -48,6 +50,11 @@ const routes = [{
         path: "/Vuecard",
         name: "Vuecard",
         component: Vuecard,
+    },
+    {
+        path: "/Vercervezas",
+        name: "Vercervezas",
+        component: Cervezas
     },
 ];
 

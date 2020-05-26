@@ -9,13 +9,6 @@
 
         <v-text-field v-model="description" label="Descripción" required></v-text-field>
 
-        <v-checkbox
-          v-model="checkbox"
-          :rules="[v => !!v || 'Debes estar de acuerdo para continuar!']"
-          label=" ¿Estás de acuerdo ?"
-          required
-        ></v-checkbox>
-
         <v-btn color="error" class="mr-4" @click="reset">Resetear Campos</v-btn>
 
         <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Enviar</v-btn>

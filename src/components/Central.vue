@@ -56,7 +56,7 @@
       <v-bottom-navigation :value="activeBtn" color="purple lighten-1">
         <v-btn>
           <span>
-            <router-link to="https://www.google.es/maps/">Cervezas cercanas</router-link>
+            <router-link to="https://www.google.es/maps">Cervezas cercanas</router-link>
           </span>
           <link />
           <v-icon>mdi-map-marker</v-icon>
@@ -64,19 +64,7 @@
       </v-bottom-navigation>
     </div>
     <div>
-      <v-footer dark padless>
-        <v-card class="flex" flat tile>
-          <v-card-title class="teal">
-            <strong class="subheading">Contacta con nosotros en nuestras Redes Sociales!</strong>
-
-            <v-spacer></v-spacer>
-
-            <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
-              <v-icon size="24px">{{ icon }}</v-icon>
-            </v-btn>
-          </v-card-title>
-        </v-card>
-      </v-footer>
+      <Footer></Footer>
     </div>
     <router-view />
 
@@ -123,13 +111,14 @@ import NavBar from "@/components/NavBar.vue";
 import BarraIzq from "@/components/BarraIzq.vue";
 import BarraDer from "@/components/BarraDer.vue";
 import Cabecera from "@/components/Cabecera.vue";
+import Footer from "@/components/Footer.vue";
 
 //import Login from "@/components/Login.vue";
 
 export default {
   name: "Central",
   data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-instagram"],
+    icons: ["mdi-facebook", "mdi-instagram", "mdi-twitter"],
 
     activeBtn: 1
   }),
@@ -138,7 +127,8 @@ export default {
     BarraIzq,
     BarraDer,
     NavBar,
-    Cabecera
+    Cabecera,
+    Footer
   },
   methods: {},
   mounted() {}

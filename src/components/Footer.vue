@@ -8,7 +8,6 @@
         <v-spacer></v-spacer>
 
         <v-btn v-for="(icon,index) in icons" :key="icon" class="mx-4" dark icon>
-          <div>--{{ index }}</div>
           <v-icon @click="link(index)" size="24px">{{ icon }}</v-icon>
         </v-btn>
       </v-card-title>
@@ -20,7 +19,7 @@
 export default {
   name: "Footer",
   data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-instagram"]
+    icons: ["mdi-instagram", "mdi-facebook", "mdi-twitter"]
   }),
   methods: {
     link(index) {

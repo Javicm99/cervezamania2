@@ -40,11 +40,12 @@ export default {
       },
       {
         options: [
-          "Inicio",
           "Sobre Nosotros",
           "Contacta",
-          "Solicitud de cerveza"
-        ]
+          "Solicitud de cerveza",
+          "Cervezas"
+        ],
+        links: ["Marca.com", "Twitter.com", "Facebook.com"]
       }
     );
   }
