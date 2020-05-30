@@ -1,17 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Central from "../src/components/Central.vue";
-import Prueba from "../src/components/Prueba.vue";
 import Login from "../src/components/Login.vue";
 import Solicitud from "../src/components/Solicitud.vue";
-import NavBar from "../src/components/NavBar.vue";
 import TodasCervezas from "../src/components/TodasCervezas.vue";
 import Vuecard from "../src/components/Vuecard.vue";
 import Cervezas from "../src/components/Cervezas.vue";
-
-
-
-
+import SobreNosotros from "../src/components/SobreNosotros.vue";
 
 
 Vue.use(VueRouter);
@@ -21,11 +16,7 @@ const routes = [{
         name: "Central",
         component: Central,
     },
-    {
-        path: "/Prueba",
-        name: "Prueba",
-        component: Prueba,
-    },
+
     {
         path: "/Login",
         name: "Login",
@@ -36,11 +27,7 @@ const routes = [{
         name: "Solicitud",
         component: Solicitud,
     },
-    {
-        path: "/Navbar",
-        name: "Navbar",
-        component: NavBar,
-    },
+
     {
         path: "/Cervezas",
         name: "Cervezas",
@@ -52,9 +39,14 @@ const routes = [{
         component: Vuecard,
     },
     {
+        path: "/SobreNosotros",
+        name: "SobreNosotros",
+        component: SobreNosotros,
+    },
+    {
         path: "/Vercervezas",
         name: "Vercervezas",
-        component: Cervezas
+        component: Cervezas,
     },
 ];
 

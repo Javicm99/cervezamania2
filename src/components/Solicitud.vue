@@ -1,21 +1,27 @@
 <template>
-  <div id="solicitud">
-    <Cabecera></Cabecera>
-    <v-row>
-      <v-form ref="form" v-model="valid">
-        <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Nombre" required></v-text-field>
+  <v-responsive>
+    <div id="solicitud">
+      <Cabecera></Cabecera>
+      <v-row>
+        <v-form ref="form" v-model="valid">
+          <h1>Formulario</h1>
+          <v-text-field v-model="local" :rules="localRules" label="Local" required></v-text-field>
 
-        <v-text-field v-model="email" :rules="emailRules" label="Correo electrónico" required></v-text-field>
+          <v-text-field v-model="cerveza" :rules="cervezaRules" label="Cerveza" required></v-text-field>
 
-        <v-text-field v-model="description" label="Descripción" required></v-text-field>
+          <v-text-field label="Descripción"></v-text-field>
 
-        <v-btn color="error" class="mr-4" @click="reset">Resetear Campos</v-btn>
+          <v-btn color="error" class="mr-4" @click="reset">Resetear Campos</v-btn>
 
-        <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Enviar</v-btn>
-      </v-form>
-    </v-row>
-    <Footer></Footer>
-  </div>
+          <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Enviar</v-btn>
+        </v-form>
+      </v-row>
+
+      <div id="prueba">
+        <Footer></Footer>
+      </div>
+    </div>
+  </v-responsive>
 </template>
 
 <script>
@@ -23,18 +29,10 @@ export default {
   name: "Solicitud",
   data: () => ({
     valid: true,
-    name: "",
-    nameRules: [
-      v => !!v || "El campo nombre es requerido",
-      v =>
-        (v && v.length <= 10) || "El nombre debe tener menos de 10 caracteres"
-    ],
-    email: "",
-    emailRules: [
-      v => !!v || "Este campo es obligatorio",
-      v => /.+@.+\..+/.test(v) || "El correo electrónico debe ser correcto"
-    ],
-    description: ""
+    local: "",
+    localRules: [v => !!v || "El campo local es requerido"],
+    cerveza: "",
+    cervezaRules: [v => !!v || "Este campo es obligatorio"]
   }),
   methods: {
     validate() {
@@ -56,11 +54,11 @@ import Footer from "./Footer";
 
 
 <style>
-#solicitud {
-  display-flex: center;
-}
 form {
   margin-left: 40%;
   margin-top: 10%;
+}
+.prueba {
+  margin-top: 5%;
 }
 </style>

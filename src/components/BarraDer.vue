@@ -1,26 +1,30 @@
 <template>
   <div class="BarraLateralDer">
-    <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <b>
-          LOCALES
-          <img class="imagenCerve" src="../local.svg" />
-        </b>
-        <span class="badge badge-primary badge-pill">
-          <i class="fa fa-star"></i>
-        </span>
-      </li>
-      <!--elementos listas de barras laterales-->
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        Fosters
-        <span class="badge badge-primary badge-pill">5</span>
-      </li>
-      <!--/elementos listas de barras laterales-->
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        Los demás
-        <span class="badge badge-primary badge-pill">0</span>
-      </li>
-    </ul>
+    <v-responsive>
+      <ul class="list-group">
+        <v-responsive>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <b>
+              LOCALES
+              <img class="imagenCerve" src="../local.svg" />
+            </b>
+            <span class="badge badge-primary badge-pill">
+              <i class="fa fa-star"></i>
+            </span>
+          </li>
+          <!--elementos listas de barras laterales-->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Fosters
+            <span class="badge badge-primary badge-pill">5</span>
+          </li>
+          <!--/elementos listas de barras laterales-->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Los demás
+            <span class="badge badge-primary badge-pill">0</span>
+          </li>
+        </v-responsive>
+      </ul>
+    </v-responsive>
   </div>
 </template>
 

@@ -8,8 +8,8 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item v-for="option in options" :key="option" @click="() => {}">
-            <v-list-item-title>{{ option }}</v-list-item-title>
+          <v-list-item v-for="option in options" @click="goTo(option.ruta)" :key="option.name">
+            <v-list-item-title>{{ option.nombre }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -40,14 +40,22 @@ export default {
       },
       {
         options: [
-          "Sobre Nosotros",
-          "Contacta",
-          "Solicitud de cerveza",
-          "Cervezas"
-        ],
-        links: ["Marca.com", "Twitter.com", "Facebook.com"]
+          { nombre: "Sobre nosotros", ruta: "SobreNosotros" }, //contacta
+          { nombre: "Solicitud de cerveza", ruta: "Solicitud" },
+          { nombre: "Nuestras cervezas", ruta: "Cervezas" }
+          //nuestros locales por ver  { nombre: "Solicitud de cerveza", ruta: "Solicitud" }
+        ]
+        //  index: ["Marca.com", "Twitter.com", "Facebook.com"]
       }
     );
+  },
+  methods: {
+    goTo(name) {
+      this.$router.push({ name: name });
+    }
   }
 };
 </script>
+
+<style >
+</style>

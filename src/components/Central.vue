@@ -1,108 +1,68 @@
 <template>
   <div class="all">
-    <Cabecera></Cabecera>
-    <nav>
-      <NavBar></NavBar>
-    </nav>
-    <div>
-      <BarraIzq></BarraIzq>
-    </div>
-
-    <div>
-      <BarraDer></BarraDer>
-    </div>
-    <div class="container-fluid seccionCentral">
-      <form>
-        <div class="form-row centrado">
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="inputBuscador" />
-          </div>
-        </div>
-      </form>
-      <div class="centrado">
-        <button id="buscar" style="font-size:24px">
-          Buscar
-          <img class="imagenCerve" src="../beer.svg" />
-        </button>
+    <v-responsive>
+      <Cabecera></Cabecera>
+      <nav>
+        <NavBar></NavBar>
+      </nav>
+      <div>
+        <BarraIzq></BarraIzq>
       </div>
 
-      <div id="divResultados">
-        <div class="titulocentrado">
-          <h1>Nombre del local/cerveza buscado</h1>
-        </div>
-        <div class="resultadosBusqueda centrado">
-          <div id="resultadosBusqueda" class="list-group">
-            <a
-              href="#"
-              class="list-group-item list-group-item-action flex-column align-items-start resultado"
-            >
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Nombre resultado</h5>
-                <span class="separador"></span>
-                <small>
-                  Valoración
-                  <i class="fa fa-star"></i>
-                </small>
-              </div>
-              <p class="mb-1">Descripción resultado</p>
-              <small class="masomenos">Click para mas información</small>
-              <div class="infoExtra"></div>
-            </a>
+      <div>
+        <BarraDer></BarraDer>
+      </div>
+
+      <div class="container-fluid seccionCentral">
+        <form>
+          <div class="form">
+            <div class="form-group">
+              <input id="buscador" type="text" class="form-control" />
+            </div>
           </div>
+        </form>
+        <div class="centrado">
+          <button id="buscar" style="font-size:24px">
+            Buscar
+            <img class="imagenCerve" src="../beer.svg" />
+          </button>
+        </div>
+
+        <div id="divResultados">
+          <v-responsive>
+            <div class="titulocentrado font-regular">
+              <h1>Nombre de la cerveza</h1>
+            </div>
+            <div class="resultadosBusqueda centrado">
+              <v-responsive>
+                <div id="resultadosBusqueda" class="list-group">
+                  <v-responsive>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action flex-column align-items-start resultado"
+                    >
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Nombre resultado</h5>
+                        <span class="separador"></span>
+                        <small>
+                          Valoración
+                          <i class="fa fa-star"></i>
+                        </small>
+                      </div>
+                      <p class="mb-1">Descripción resultado</p>
+
+                      <div class="infoExtra"></div>
+                    </a>
+                  </v-responsive>
+                </div>
+              </v-responsive>
+            </div>
+          </v-responsive>
         </div>
       </div>
-    </div>
-    <div>
-      <v-bottom-navigation :value="activeBtn" color="purple lighten-1">
-        <v-btn>
-          <span>
-            <router-link to="https://www.google.es/maps">Cervezas cercanas</router-link>
-          </span>
-          <link />
-          <v-icon>mdi-map-marker</v-icon>
-        </v-btn>
-      </v-bottom-navigation>
-    </div>
-    <div>
-      <Footer></Footer>
-    </div>
+    </v-responsive>
+    <Footer></Footer>
     <router-view />
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </div>
 </template>
 
@@ -155,6 +115,10 @@ export default {
 /* ::-webkit-scrollbar-thumb:hover { */
 /* background-color:green; */
 /* } */
+
+template {
+  background-color: rgb(54, 53, 53);
+}
 
 .all {
   background-color: rgb(54, 53, 53);
@@ -230,14 +194,20 @@ export default {
   height: 50px;
   width: 50px;
 }
+#buscador {
+  margin: 0 auto;
+}
 
 .botonElegir {
   margin-left: auto;
 }
+.form {
+  margin: auto;
+  width: 50%;
+  margin-top: 10%;
+}
 #enviar {
   color: #041d61;
   padding: 5px;
-}
-#inputBuscador {
 }
 </style>

@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <img src="../logo/fondoDefinitivo2.jpg" />
+    <img class="cabecera" src="../logo/fondoDefinitivo2.jpg" />
   </div>
 </template>
 
@@ -14,12 +14,9 @@ export default {
 </script>
 
 <style>
-.BarraLateralIzq {
-  color: black;
-  padding: 5px;
-  padding-top: 50px;
-  float: left;
-  width: 12%;
+.cabecera {
+  width: 100%;
+  height: 10%;
 }
 </style
 >>
