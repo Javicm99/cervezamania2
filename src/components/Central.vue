@@ -14,7 +14,7 @@
       </div>
 
       <div class="container-fluid seccionCentral">
-        <form>
+        <form id="form">
           <div class="form">
             <div class="form-group">
               <input id="buscador" type="text" class="form-control" />
@@ -157,6 +157,9 @@ template {
 
 .separador {
   width: 650px;
+}
+#form {
+  margin: auto;
 }
 
 .superior {

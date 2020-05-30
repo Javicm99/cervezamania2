@@ -1,6 +1,12 @@
 <template>
   <div>
-    <v-app-bar color="deep-purple accent-4" dense dark>
+    <v-app-bar
+      color="deep-purple accent-4"
+      dense
+      dark
+      prominent
+      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    >
       <v-menu left bottom>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on">
