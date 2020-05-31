@@ -1,52 +1,110 @@
-<template>
-  <v-row align="center">
-    <v-row justify="space-around">
-      <v-switch v-model="accordion" class="ma-2" label="Accordion"></v-switch>
-      <v-switch v-model="popout" class="ma-2" label="Popout"></v-switch>
-      <v-switch v-model="inset" class="ma-2" label="Inset"></v-switch>
-      <v-switch v-model="multiple" class="ma-2" label="Multiple"></v-switch>
-      <v-switch v-model="disabled" class="ma-2" label="Disabled"></v-switch>
-      <v-switch v-model="readonly" class="ma-2" label="Readonly"></v-switch>
-      <v-switch v-model="focusable" class="ma-2" label="Focusable"></v-switch>
-      <v-switch v-model="flat" class="ma-2" label="Flat"></v-switch>
-      <v-switch v-model="hover" class="ma-2" label="Hover"></v-switch>
-      <v-switch v-model="tile" class="ma-2" label="Tile"></v-switch>
-    </v-row>
 
-    <v-expansion-panels
-      :accordion="accordion"
-      :popout="popout"
-      :inset="inset"
-      :multiple="multiple"
-      :focusable="focusable"
-      :disabled="disabled"
-      :readonly="readonly"
-      :flat="flat"
-      :hover="hover"
-      :tile="tile"
-    >
-      <v-expansion-panel v-for="(item,i) in 5" :key="i">
-        <v-expansion-panel-header>Cerveza</v-expansion-panel-header>
-        <v-expansion-panel-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
-  </v-row>
+<template>
+  <div id="all">
+    <Cabecera></Cabecera>
+    <NavBar></NavBar>
+    <v-data-table
+      id="tabla"
+      :headers="headers"
+      :items="cervezas"
+      :items-per-page="10"
+      class="elevation-1"
+    ></v-data-table>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
+import Cabecera from "@/components/Cabecera.vue";
+import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
   name: "Cervezas",
-  data: () => ({
-    accordion: false,
-    popout: false,
-    inset: false,
-    multiple: false,
-    disabled: false,
-    readonly: false,
-    focusable: false,
-    flat: false,
-    hover: false,
-    tile: false
-  })
+  data() {
+    return {
+      headers: [
+        {
+          text: "Cervezas",
+          align: "start",
+          sortable: false,
+          value: "name"
+        },
+        { text: "Calories", value: "calories" },
+        { text: "Fat (g)", value: "fat" },
+        { text: "Carbs (g)", value: "carbs" },
+        { text: "Protein (g)", value: "protein" },
+        { text: "Iron (%)", value: "iron" }
+      ],
+      cervezas: [
+        {
+          name: "Cupcake",
+          calories: 305,
+          fat: 3.7,
+          carbs: 67,
+          protein: 4.3,
+          iron: "8%"
+        },
+        {
+          name: "Gingerbread",
+          calories: 356,
+          fat: 16.0,
+          carbs: 49,
+          protein: 3.9,
+          iron: "16%"
+        },
+        {
+          name: "Jelly bean",
+          calories: 375,
+          fat: 0.0,
+          carbs: 94,
+          protein: 0.0,
+          iron: "0%"
+        },
+        {
+          name: "Lollipop",
+          calories: 392,
+          fat: 0.2,
+          carbs: 98,
+          protein: 0,
+          iron: "2%"
+        },
+        {
+          name: "Honeycomb",
+          calories: 408,
+          fat: 3.2,
+          carbs: 87,
+          protein: 6.5,
+          iron: "45%"
+        },
+        {
+          name: "Donut",
+          calories: 452,
+          fat: 25.0,
+          carbs: 51,
+          protein: 4.9,
+          iron: "22%"
+        },
+        {
+          name: "KitKat",
+          calories: 518,
+          fat: 26.0,
+          carbs: 65,
+          protein: 7,
+          iron: "6%"
+        }
+      ]
+    };
+  },
+  components: { Footer, Cabecera, NavBar }
 };
 </script>
+
+<style>
+#tabla {
+  height: 100%;
+}
+#all {
+  height: 100%;
+}
+</style>

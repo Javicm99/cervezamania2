@@ -14,6 +14,7 @@
       </div>
 
       <div class="container-fluid seccionCentral">
+        <h1 id="title">Busca tu cerveza favorita!</h1>
         <form id="form">
           <div class="form">
             <div class="form-group">
@@ -99,6 +100,9 @@ export default {
 ::-webkit-scrollbar {
   width: 12px;
 }
+#title {
+  margin: auto !important;
+}
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -115,15 +119,6 @@ export default {
 /* ::-webkit-scrollbar-thumb:hover { */
 /* background-color:green; */
 /* } */
-
-template {
-  background-color: rgb(54, 53, 53);
-}
-
-.all {
-  background-color: rgb(54, 53, 53);
-  color: white;
-}
 
 .centrado {
   display: flex;

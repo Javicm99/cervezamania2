@@ -2,9 +2,10 @@
   <v-responsive>
     <div id="solicitud">
       <Cabecera></Cabecera>
-      <v-row>
-        <v-form ref="form" v-model="valid">
-          <h1>Formulario</h1>
+      <NavBar></NavBar>
+      <v-row id="row">
+        <v-form id="formu" ref="form" v-model="valid">
+          <h1>Solicitud de Cerveza</h1>
           <v-text-field v-model="local" :rules="localRules" label="Local" required></v-text-field>
 
           <v-text-field v-model="cerveza" :rules="cervezaRules" label="Cerveza" required></v-text-field>
@@ -17,9 +18,7 @@
         </v-form>
       </v-row>
 
-      <div id="prueba">
-        <Footer></Footer>
-      </div>
+      <Footer></Footer>
     </div>
   </v-responsive>
 </template>
@@ -44,12 +43,14 @@ export default {
   },
   components: {
     Cabecera,
-    Footer
+    Footer,
+    NavBar
   }
 };
 
 import Cabecera from "./Cabecera";
 import Footer from "./Footer";
+import NavBar from "@/components/NavBar.vue";
 </script>
 
 
@@ -58,7 +59,15 @@ form {
   margin-left: 40%;
   margin-top: 10%;
 }
-.prueba {
-  margin-top: 5%;
+
+#solicitud {
+  background-color: rgb(255, 204, 102);
+  height: 100%;
+}
+#form {
+  margin: auto;
+}
+#row {
+  margin-top: -5%;
 }
 </style>

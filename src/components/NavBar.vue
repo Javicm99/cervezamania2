@@ -1,10 +1,10 @@
+
 <template>
   <div>
     <v-app-bar
       color="deep-purple accent-4"
       dense
       dark
-      prominent
       src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
     >
       <v-menu left bottom>
@@ -46,12 +46,11 @@ export default {
       },
       {
         options: [
-          { nombre: "Sobre nosotros", ruta: "SobreNosotros" }, //contacta
-          { nombre: "Solicitud de cerveza", ruta: "Solicitud" },
-          { nombre: "Nuestras cervezas", ruta: "Cervezas" }
-          //nuestros locales por ver  { nombre: "Solicitud de cerveza", ruta: "Solicitud" }
+          { nombre: "Inicio", ruta: "Central", estado: true },
+          { nombre: "Sobre nosotros", ruta: "SobreNosotros", estado: true }, //contacta
+          { nombre: "Solicitud de cerveza", ruta: "Solicitud", estado: true },
+          { nombre: "Nuestras cervezas", ruta: "Cervezas", estado: true }
         ]
-        //  index: ["Marca.com", "Twitter.com", "Facebook.com"]
       }
     );
   },

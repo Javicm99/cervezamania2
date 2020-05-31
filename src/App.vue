@@ -65,3 +65,9 @@ export default {
   mounted() {}
 };
 </script>
+
+<style>
+#app {
+  background-color: rgb(54, 53, 53);
+}
+</style>

@@ -3,9 +3,8 @@ import VueRouter from "vue-router";
 import Central from "../src/components/Central.vue";
 import Login from "../src/components/Login.vue";
 import Solicitud from "../src/components/Solicitud.vue";
-import TodasCervezas from "../src/components/TodasCervezas.vue";
-import Vuecard from "../src/components/Vuecard.vue";
 import Cervezas from "../src/components/Cervezas.vue";
+import Vuecard from "../src/components/Vuecard.vue";
 import SobreNosotros from "../src/components/SobreNosotros.vue";
 
 
@@ -14,7 +13,7 @@ Vue.use(VueRouter);
 const routes = [{
         path: "/",
         name: "Central",
-        component: Central,
+        component: Central
     },
 
     {
@@ -31,7 +30,7 @@ const routes = [{
     {
         path: "/Cervezas",
         name: "Cervezas",
-        component: TodasCervezas,
+        component: Cervezas,
     },
     {
         path: "/Vuecard",
@@ -43,11 +42,7 @@ const routes = [{
         name: "SobreNosotros",
         component: SobreNosotros,
     },
-    {
-        path: "/Vercervezas",
-        name: "Vercervezas",
-        component: Cervezas,
-    },
+
 ];
 
 const router = new VueRouter({
